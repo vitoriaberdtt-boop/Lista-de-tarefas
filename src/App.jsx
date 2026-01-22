@@ -64,6 +64,7 @@ const filteredTodos = todos.filter((todo) => {
   return true;
 });
 
+
 return (
       <div className='app'>
         <fieldset id='titulo'>
@@ -71,8 +72,9 @@ return (
         </fieldset>
 
       <TodoForm addTodo={addTodo} />
+      <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
+      <Search search={search} setSearch={setSearch} />
       
-
         <div className='todo-list'>
           {todos
           .filter((todo) => 
@@ -98,8 +100,7 @@ return (
             />
           ))}
         </div>
-      <Search search={search} setSearch={setSearch} />
-      <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
+      
       <p className="copy">&copy; Vitória Berdtt</p>
       </div>
   );
