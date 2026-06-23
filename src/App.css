@@ -1,4 +1,3 @@
-/* Reset e configurações gerais */
 * {
   margin: 0;
   padding: 0;
@@ -7,13 +6,13 @@
 .copy {
     text-align: center;
     margin-top: 20px;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #f8f6fa;
 }
 
 body, html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #d773ca 0%, #66102d 100%);
+  background:  #181017;
   min-height: 100vh;
   color: #f8f9fa;
 }
@@ -24,12 +23,9 @@ body, html {
 }
 /* Container principal */
 .app {
-  background: rgba(30, 2, 57, 0.532);
-  backdrop-filter: blur(10px);
+  background: rgba(48, 23, 58, 0.901);
   border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 /* Título */
@@ -40,17 +36,16 @@ body, html {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: 2rem;
   font-weight: 700;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: rgb(220, 185, 215);
   margin-bottom: 0;
 }
 
 h2 {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: 1.3rem;
   margin-bottom: 1rem;
-  color: #fff;
+  color: rgb(220, 185, 215);
 }
 
 /* Formulário de adicionar tarefa */
@@ -69,7 +64,7 @@ form {
 
 input, select {
   padding: 0.875rem 1rem;
-  font-size: 1rem;
+  font-size: 0.85rem;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.95);
@@ -80,8 +75,7 @@ input, select {
 
 input:focus, select:focus {
   outline: none;
-  border-color: #620527;
-  box-shadow: 0 0 0 3px rgba(80, 16, 37, 0.996);
+  border-color: #361e35;
 }
 
 input::placeholder {
@@ -90,7 +84,7 @@ input::placeholder {
 
 /* Botões do formulário */
 form button {
-  background: linear-gradient(135deg, #d46185 0%, #a24b8b 100%);
+  background:  #c168a9 100%;
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -104,18 +98,7 @@ form button {
 }
 
 form button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(58, 1, 31, 0.6);
-}
-
-form button:active {
-  transform: translateY(0);
-}
-
-form button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
+  background: #a85c94;
 }
 
 /* Campo de busca */
@@ -130,11 +113,11 @@ form button:disabled {
 
 .pesquisar {
   padding: 0.875rem 1rem;
-  font-size: 1rem;
+  font-size: 0.85rem;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.95);
-  color: #333;
+  color: #333333d0;
   width: 100%;
   margin-bottom: 1.5rem;
   transition: all 0.3s ease;
@@ -169,7 +152,7 @@ form button:disabled {
 }
 
 .Filter > div:last-child p {
-  font-size: 1rem;
+  font-size: 0.85rem;
   margin-bottom: 0.5rem;
   color: #fff;
 }
@@ -184,7 +167,7 @@ form button:disabled {
   color: white;
   border: 2px solid rgba(255, 255, 255, 0.3);
   padding: 0.75rem 1.5rem;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
@@ -194,11 +177,6 @@ form button:disabled {
 
 .Filter button:hover {
   background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-}
-
-.Filter button:active {
-  transform: translateY(0);
 }
 
 /* Lista de tarefas */
@@ -223,7 +201,6 @@ form button:disabled {
 
 .todo:hover {
   background: rgba(255, 255, 255, 0.15);
-  transform: translateX(5px);
 }
 
 .content {
@@ -232,14 +209,14 @@ form button:disabled {
 }
 
 .content p {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: 1rem;
   color: #fff;
   word-break: break-word;
 }
 
 .content em {
   color: #ddd;
-  font-size: 0.9em;
+  font-size: 0.85rem;
   opacity: 0.8;
 }
 
@@ -254,7 +231,7 @@ form button:disabled {
   border: none;
   padding: 0.75rem 1.25rem;
   color: white;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
@@ -264,45 +241,24 @@ form button:disabled {
 
 /* Botão Completar */
 .c {
-  background: linear-gradient(135deg, #11998e 0%, #26a456 100%);
+  background: #10866c;
   box-shadow: 0 4px 15px rgba(2, 47, 19, 0.3);
 }
 
 .c:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(2, 47, 19, 0.4);
-}
-
-.c:active {
-  transform: translateY(0);
-}
-
-.c:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
+  background: #0e6b5c;
 }
 
 /* Botão Remover */
 .r {
-  background: linear-gradient(135deg, #eb3349 0%, #ee523a 100%);
+  background: #b62d3d ;
   box-shadow: 0 4px 15px rgba(30, 3, 6, 0.3);
 }
 
 .r:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(60, 3, 9, 0.4);
+  background: #9e1f2c;
 }
 
-.r:active {
-  transform: translateY(0);
-}
-
-.r:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -369,7 +325,7 @@ form button:disabled {
 
   .c, .r {
     padding: 0.625rem 1rem;
-    font-size: 0.875rem;
+    font-size: 0.85rem;
   }
 
   .Filter > div:last-child > div {

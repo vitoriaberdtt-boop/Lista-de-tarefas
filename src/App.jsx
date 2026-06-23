@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Todo from './components/Todo.jsx'
 import TodoForm from './components/TodoForm.jsx'
@@ -9,24 +7,10 @@ import Filter from './components/Filter'
 
 
 function App() {
-  const [todos, setTodos] = useState([
-    { id: 1, text: 'Estudar React', 
-      category: 'Estudos',
-      isCompleted: false 
-    },
-    { id: 2, text: 'Fazer compras', 
-      category: 'Pessoal',
-      isCompleted: true 
-    },
-    { id: 3, text: 'Estudar TypeScript', 
-      category: 'Estudos',
-      isCompleted: false 
-    },     
-  ])
-
-const [search, setSearch] = useState('');
-const [filter, setFilter] = useState('all');
-const [sort, setSort] = useState('AZ');
+  const [todos, setTodos] = useState([])
+  const [search, setSearch] = useState('');
+  const [filter, setFilter] = useState('all');
+  const [sort, setSort] = useState('AZ');
 
 // Adicionar tarefa
 const addTodo = (text, category) => {
@@ -68,7 +52,7 @@ const filteredTodos = todos.filter((todo) => {
 return (
       <div className='app'>
         <fieldset id='titulo'>
-          <h1>Lista de Tarefas</h1>
+          <h1>Gerenciador de Tarefas</h1>
         </fieldset>
 
       <TodoForm addTodo={addTodo} />
