@@ -1,4 +1,6 @@
+import { useLocalStorage } from './utils/useLocalStorage.js'
 import { useState } from 'react'
+import { useTheme } from './context/ThemeContext.jsx'
 import './App.css'
 import Todo from './components/Todo.jsx'
 import TodoForm from './components/TodoForm.jsx'
@@ -7,10 +9,11 @@ import Filter from './components/Filter'
 
 
 function App() {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useLocalStorage('todos', []);
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState('all');
   const [sort, setSort] = useState('AZ');
+  const { theme, toggleTheme } = useTheme();
 
 // Adicionar tarefa
 const addTodo = (text, category) => {
@@ -53,6 +56,9 @@ return (
       <div className='app'>
         <fieldset id='titulo'>
           <h1>Gerenciador de Tarefas</h1>
+          <button onClick={toggleTheme} className='theme-button'>
+            {theme === 'light' ? '🌙' : '☀️'}
+          </button>
         </fieldset>
 
       <TodoForm addTodo={addTodo} />

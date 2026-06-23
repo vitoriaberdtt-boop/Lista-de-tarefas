@@ -3,18 +3,61 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Dark mode */
+:root,
+[data-theme='dark'] {
+  --bg: #181017;
+  --text: #f8f9fa;
+  --text-secondary: #f8f6fa;
+  --app-bg: rgba(48, 23, 58, 0.901);
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --card-bg-hover: rgba(255, 255, 255, 0.15);
+  --input-bg: rgba(255, 255, 255, 0.95);
+  --input-text: #333;
+  --input-border: rgba(255, 255, 255, 0.2);
+  --title: rgb(220, 185, 215);
+  --primary: #c168a9;
+  --primary-hover: #a85c94;
+  --border: rgba(255, 255, 255, 0.1);
+  --complete: #10866c;
+  --complete-hover: #0e6b5c;
+  --remove: #b62d3d;
+  --remove-hover: #9e1f2c;
+}
+
+/* Light mode */
+[data-theme='light'] {
+  --bg: #dbcfdf;
+  --text: #3d1b3d;
+  --text-secondary: #d9d8da;
+  --app-bg: #f6f6f6;
+  --card-bg: #eae0f0;
+  --card-bg-hover: #e9d8ed;
+  --input-bg: #ffffff;
+  --input-text: #1a1a1a;
+  --input-border: #b2a1b6;
+  --title: #6b2d5c;
+  --primary: #c168a9;
+  --primary-hover: #d4b6cc;
+  --border: #b2a1b6;
+  --complete: #289378;
+  --complete-hover: #0a5f4a;
+  --remove: #e44646;
+  --remove-hover: #c32b2b;
+}
 .copy {
     text-align: center;
     margin-top: 20px;
     font-size: 1rem;
-    color: #f8f6fa;
+    color: var(--text);
 }
 
 body, html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background:  #181017;
+  background:  var(--bg);
   min-height: 100vh;
-  color: #f8f9fa;
+  color: var(--text);
 }
 #root {
   max-width: 1200px;
@@ -23,7 +66,7 @@ body, html {
 }
 /* Container principal */
 .app {
-  background: rgba(48, 23, 58, 0.901);
+  background: var(--app-bg);
   border-radius: 20px;
   padding: 2rem;
 }
@@ -38,19 +81,34 @@ body, html {
 h1 {
   font-size: 2rem;
   font-weight: 700;
-  color: rgb(220, 185, 215);
+  color: var(--title);
   margin-bottom: 0;
 }
 
 h2 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  color: rgb(220, 185, 215);
+  color: var(--title);
+}
+
+/* Botão de tema */
+.theme-btn {
+  font-size: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.theme-btn:hover {
+  background: var(--card-bg-hover);
 }
 
 /* Formulário de adicionar tarefa */
 .todo-form {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 15px;
   margin-bottom: 2rem;
@@ -65,17 +123,17 @@ form {
 input, select {
   padding: 0.875rem 1rem;
   font-size: 0.85rem;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--input-border);
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.95);
-  color: #333;
+  background: var(--input-bg);
+  color: var(--input-text);
   transition: all 0.3s ease;
   width: 100%;
 }
 
 input:focus, select:focus {
   outline: none;
-  border-color: #361e35;
+  border-color: var(--primary);
 }
 
 input::placeholder {
@@ -84,7 +142,7 @@ input::placeholder {
 
 /* Botões do formulário */
 form button {
-  background:  #c168a9 100%;
+  background:  var(--primary);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -98,7 +156,7 @@ form button {
 }
 
 form button:hover {
-  background: #a85c94;
+  background: var(--primary-hover);
 }
 
 /* Campo de busca */
@@ -114,10 +172,10 @@ form button:hover {
 .pesquisar {
   padding: 0.875rem 1rem;
   font-size: 0.85rem;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--input-border);
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.95);
-  color: #333333d0;
+  background: var(--input-bg);
+  color: var(--input-text);
   width: 100%;
   margin-bottom: 1.5rem;
   transition: all 0.3s ease;
@@ -125,13 +183,13 @@ form button:hover {
 
 .pesquisar:focus {
   outline: none;
-  border-color: #ea66be;
+  border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
 }
 
 /* Filtros */
 .Filter {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 15px;
   margin-bottom: 2rem;
@@ -154,7 +212,7 @@ form button:hover {
 .Filter > div:last-child p {
   font-size: 0.85rem;
   margin-bottom: 0.5rem;
-  color: #fff;
+  color: var(--text);
 }
 
 .Filter > div:last-child > div {
@@ -163,9 +221,9 @@ form button:hover {
 }
 
 .Filter button {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: var(--card-bg);
+  color: var(--text);
+  border: 2px solid var(--border);
   padding: 0.75rem 1.5rem;
   font-size: 0.85rem;
   font-weight: 600;
@@ -176,7 +234,7 @@ form button:hover {
 }
 
 .Filter button:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--card-bg-hover);
 }
 
 /* Lista de tarefas */
@@ -188,7 +246,7 @@ form button:hover {
 
 /* Item de tarefa */
 .todo {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--card-bg);
   padding: 1.25rem;
   border-radius: 12px;
   display: flex;
@@ -196,11 +254,11 @@ form button:hover {
   align-items: center;
   gap: 1rem;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border);
 }
 
 .todo:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--card-bg-hover);
 }
 
 .content {
@@ -210,12 +268,12 @@ form button:hover {
 
 .content p {
   font-size: 1rem;
-  color: #fff;
+  color: var(--text);
   word-break: break-word;
 }
 
 .content em {
-  color: #ddd;
+  color: var(--text);
   font-size: 0.85rem;
   opacity: 0.8;
 }
@@ -230,7 +288,7 @@ form button:hover {
 .c, .r {
   border: none;
   padding: 0.75rem 1.25rem;
-  color: white;
+  color: var(--text);
   font-size: 0.85rem;
   font-weight: 600;
   border-radius: 8px;
@@ -241,22 +299,22 @@ form button:hover {
 
 /* Botão Completar */
 .c {
-  background: #10866c;
+  background: var(--complete);
   box-shadow: 0 4px 15px rgba(2, 47, 19, 0.3);
 }
 
 .c:hover {
-  background: #0e6b5c;
+  background: var(--complete-hover);
 }
 
 /* Botão Remover */
 .r {
-  background: #b62d3d ;
+  background: var(--remove);
   box-shadow: 0 4px 15px rgba(30, 3, 6, 0.3);
 }
 
 .r:hover {
-  background: #9e1f2c;
+  background: var(--remove-hover);
 }
 
 
