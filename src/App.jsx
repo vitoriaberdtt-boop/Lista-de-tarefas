@@ -56,10 +56,11 @@ return (
       <div className='app'>
         <fieldset id='titulo'>
           <h1>Gerenciador de Tarefas</h1>
-          <button onClick={toggleTheme} className='theme-button'>
-            {theme === 'light' ? '🌙' : '☀️'}
+          <button onClick={toggleTheme} className='theme-btn'>
+            {theme === 'light' ? '⏾' : '☀'}
           </button>
         </fieldset>
+        
 
       <TodoForm addTodo={addTodo} />
       <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
