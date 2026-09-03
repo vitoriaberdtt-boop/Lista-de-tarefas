@@ -57,7 +57,7 @@ return (
         <fieldset id='titulo'>
           <h1>Gerenciador de Tarefas</h1>
           <button onClick={toggleTheme} className='theme-btn'>
-            {theme === 'light' ? '☾' : '☀'}
+            {theme === 'light' ? '\u263E\uFE0E' : '\u2600\uFE0E'}
           </button>
         </fieldset>
         

@@ -18,12 +18,12 @@
   --input-border: rgba(255, 255, 255, 0.2);
   --title: rgb(220, 185, 215);
   --primary: #c168a9;
-  --primary-hover: #a85c94;
-  --border: rgba(255, 255, 255, 0.1);
+  --primary-hover: #894677;
+  --border: rgba(220, 185, 215, 0.819);
   --complete: #10866c;
-  --complete-hover: #0e6b5c;
+  --complete-hover: #0c574a;
   --remove: #b62d3d;
-  --remove-hover: #9e1f2c;
+  --remove-hover: #8a1c27;
 }
 
 /* Light mode */
@@ -32,15 +32,15 @@
   --text: #3d1b3d;
   --text-secondary: #d9d8da;
   --app-bg: #f6f6f6;
-  --card-bg: #eae0f0;
+  --card-bg: #eadef1;
   --card-bg-hover: #e9d8ed;
   --input-bg: #ffffff;
   --input-text: #1a1a1a;
-  --input-border: #b2a1b6;
+  --input-border: #af88b8;;
   --title: #6b2d5c;
   --primary: #c168a9;
   --primary-hover: #d4b6cc;
-  --border: #b2a1b6;
+  --border: #af88b8;
   --complete: #289378;
   --complete-hover: #0a5f4a;
   --remove: #e44646;
@@ -95,18 +95,18 @@ h2 {
 
 /* Botão de tema */
 .theme-btn {
+   border: 2px solid var(--border);
   font-size: 2rem;
   background: var(--card-bg);
-  border: 2px solid var(--border);
+  color: var(--text); 
   border-radius: 50%;
   width: 50px;
   height: 50px;
   cursor: pointer;
   flex-shrink: 0;
-}
-
-.theme-btn:hover {
-  background: var(--card-bg-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Formulário de adicionar tarefa */
@@ -130,7 +130,6 @@ input, select {
   border-radius: 10px;
   background: var(--input-bg);
   color: var(--input-text);
-  transition: all 0.3s ease;
   width: 100%;
 }
 
@@ -153,9 +152,7 @@ form button {
   font-weight: 600;
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  align-self: flex-start;
-  box-shadow: 0 4px 15px rgba(57, 5, 19, 0.4);
+  align-self: flex-start;;
 }
 
 form button:hover {
@@ -181,13 +178,11 @@ form button:hover {
   color: var(--input-text);
   width: 100%;
   margin-bottom: 1.5rem;
-  transition: all 0.3s ease;
 }
 
 .pesquisar:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
 }
 
 /* Filtros */
@@ -224,7 +219,7 @@ form button:hover {
 }
 
 .Filter button {
-  background: var(--card-bg);
+  background: transparent;
   color: var(--text);
   border: 2px solid var(--border);
   padding: 0.75rem 1.5rem;
@@ -232,7 +227,6 @@ form button:hover {
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
   flex: 1;
 }
 
@@ -256,8 +250,7 @@ form button:hover {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  transition: all 0.3s ease;
-  border: 1px solid var(--border);
+  border: none;
 }
 
 .todo:hover {
@@ -278,7 +271,6 @@ form button:hover {
 .content em {
   color: var(--text);
   font-size: 0.85rem;
-  opacity: 0.8;
 }
 
 /* Ações (botões completar e remover) */
@@ -291,19 +283,17 @@ form button:hover {
 .c, .r {
   border: none;
   padding: 0.75rem 1.25rem;
-  color: var(--text);
+  color: #ffffff;
   font-size: 0.85rem;
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
   white-space: nowrap;
 }
 
 /* Botão Completar */
 .c {
   background: var(--complete);
-  box-shadow: 0 4px 15px rgba(2, 47, 19, 0.3);
 }
 
 .c:hover {
@@ -313,7 +303,6 @@ form button:hover {
 /* Botão Remover */
 .r {
   background: var(--remove);
-  box-shadow: 0 4px 15px rgba(30, 3, 6, 0.3);
 }
 
 .r:hover {
@@ -397,20 +386,4 @@ form button:hover {
     padding: 0.625rem 0.75rem;
     font-size: 0.85rem;
   }
-}
-
-/* Animações suaves */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.todo {
-  animation: fadeIn 0.3s ease;
 }
